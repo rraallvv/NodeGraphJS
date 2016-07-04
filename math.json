@@ -1,51 +1,44 @@
 [
     {
+        "type": "Math.Multiply",
         "properties": {
-            "x": 275,
-            "y": 383,
-            "color": "#d49a60",
-            "name": "Multiply",
+            "x": 260,
+            "y": 100,
             "id": 0
         },
-        "type": "Math.Multiply",
         "ins": {
             "A": {
-                "type": "Number",
-                "value": 5
+                "type": "Number"
             },
             "B": {
-                "type": "Number",
-                "value": 10
+                "type": "Number"
             }
         },
         "outs": {
             "out": {
-                "type": "Number",
-                "value": 50,
-                "links": []
+                "type": "Number"
             }
         }
     },
     {
         "properties": {
-            "x": 565,
-            "y": 329,
+            "x": 550,
+            "y": 255,
             "color": "#829f72",
-            "name": "Result",
+            "name": "This is a really long node name",
             "id": 1
         },
         "ins": {
-            "val": {
-                "type": "Number",
-                "value": -5
+            "mult": {
+                "type": "Number"
             }
         },
         "outs": {}
     },
     {
         "properties": {
-            "x": 35,
-            "y": 263,
+            "x": 10,
+            "y": 10,
             "color": "#829f72",
             "name": "source",
             "id": 2
@@ -55,19 +48,14 @@
             "initialVal": {
                 "type": "Number",
                 "value": 5,
-                "links": [
-                    "0.A",
-                    "5.A",
-                    "7.A",
-                    "6.B"
-                ]
+                "links": ["0.A"]
             }
         }
     },
     {
         "properties": {
-            "x": 35,
-            "y": 378,
+            "x": 10,
+            "y": 100,
             "color": "#829f72",
             "name": "source2",
             "id": 3
@@ -77,95 +65,23 @@
             "initialVal": {
                 "type": "Number",
                 "value": 10,
-                "links": [
-                    "0.B",
-                    "5.B",
-                    "7.B",
-                    "6.A"
-                ]
+                "links": ["0.B"]
             }
         }
     },
     {
         "properties": {
-            "x": 275,
-            "y": 144,
-            "color": "#d49a60",
-            "name": "Add",
-            "id": 5
+            "x": 100,
+            "y": 300,
+            "color": "#829f72",
+            "name": "No Links",
+            "id": 4
         },
-        "type": "Math.Add",
-        "ins": {
-            "A": {
-                "type": "Number",
-                "value": 5
-            },
-            "B": {
+        "ins": {},
+        "outs": {
+            "initialVal": {
                 "type": "Number",
                 "value": 10
-            }
-        },
-        "outs": {
-            "out": {
-                "type": "Number",
-                "value": 15,
-                "links": []
-            }
-        }
-    },
-    {
-        "properties": {
-            "x": 275,
-            "y": 260,
-            "color": "#d49a60",
-            "name": "Subtract",
-            "id": 6
-        },
-        "type": "Math.Subtract",
-        "ins": {
-            "A": {
-                "type": "Number",
-                "value": 10
-            },
-            "B": {
-                "type": "Number",
-                "value": 5
-            }
-        },
-        "outs": {
-            "out": {
-                "type": "Number",
-                "value": -5,
-                "links": [
-                    "1.val"
-                ]
-            }
-        }
-    },
-    {
-        "properties": {
-            "x": 275,
-            "y": 505,
-            "color": "#d49a60",
-            "name": "Divide",
-            "id": 7
-        },
-        "type": "Math.Divide",
-        "ins": {
-            "A": {
-                "type": "Number",
-                "value": 5
-            },
-            "B": {
-                "type": "Number",
-                "value": 10
-            }
-        },
-        "outs": {
-            "out": {
-                "type": "Number",
-                "value": 0.5,
-                "links": []
             }
         }
     }
