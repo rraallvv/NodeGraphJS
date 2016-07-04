@@ -1,0 +1,138 @@
+<!doctype html>
+<html lang="en">
+
+<!-- Mirrored from www.brettdixon.com/demos/nodeGraph.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 04 Jul 2016 04:28:33 GMT -->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+    <title>NodeGraph</title>
+    <meta name="description" content="">
+    <style>
+        body {
+            -webkit-user-select: none;
+        }
+
+    </style>
+</head>
+<body>
+    <p id='fps'></p>
+    <h1>Math Demo</h1>
+    <p id='result'></p>
+    <p>Drag a wire from an "out" on an orange node to the Result node.  The Result will reflect the change. Also try swapping A and B on the orange nodes.</p>
+    <ul>
+        <li>source = 5</li>
+        <li>source2 = 10</li>
+    </ul>
+    <div id='math_canvas'></div>
+
+    <h1>SQL Demo</h1>
+    <p>Use the form below to add new table nodes to the graph.  The Fields section woudl be fields of the table and the joins would be fields needing to be joined on other tables. The type will be used for type checking when dragging a new wire.
+    <div>
+        <form>
+            <fieldset>
+                <legend>Table Name</legend>
+                <input id='tableName' />
+            </fieldset>
+            <fieldset id='fields'>
+                <legend>Fields</legend>
+                <input type='text' /><select><option>Number</option><option>String</option><option>Boolean</option><option>Date</option></select><br />
+                <input type='text' /><select><option>Number</option><option>String</option><option>Boolean</option><option>Date</option></select><br />
+                <input type='text' /><select><option>Number</option><option>String</option><option>Boolean</option><option>Date</option></select><br />
+                <input type='text' /><select><option>Number</option><option>String</option><option>Boolean</option><option>Date</option></select><br />
+                <input type='text' /><select><option>Number</option><option>String</option><option>Boolean</option><option>Date</option></select><br />
+                <input type='text' /><select><option>Number</option><option>String</option><option>Boolean</option><option>Date</option></select><br />
+                <input type='text' /><select><option>Number</option><option>String</option><option>Boolean</option><option>Date</option></select><br />
+            </fieldset>
+            <fieldset id='joins'>
+                <legend>Joins</legend>
+                <input type='text' /><select><option>Number</option><option>String</option><option>Boolean</option><option>Date</option></select><br />
+                <input type='text' /><select><option>Number</option><option>String</option><option>Boolean</option><option>Date</option></select><br />
+            </fieldset>
+            <input id='add' type='button' value='Add Node' />
+            <input id='rem' type='button' value='Remove Node' />
+        </form>
+    </div>
+    <div id='sql_canvas'></div>
+    <script src="mootoolsCore.js"></script>
+    <script src="mootoolsMore.js"></script>
+    <script src="easel.js"></script>
+    <script src="NodeGraph.js"></script>
+    <script src="NodeGraph.NodeList.js"></script>
+    <script src="NodeGraph.Types.js"></script>
+    <script src="vector.js"></script>
+    <script stype='text/javascript'>
+        var NG;
+        var fpsP = $('fps');
+        var resP = $('result');
+        window.addEvent('domready', function() {
+            NG = new NodeGraph.NodeGraph('math_canvas', {
+                onLink: function() {
+                    resP.set('text', 'Result: ' + NG.result().value.ins.val.value || 'undefined');
+                }
+            });
+            NG.load('math.json');
+
+            NG1 = new NodeGraph.NodeGraph('sql_canvas', {
+                onLoad: function() {
+                    
+                }
+            });
+            NG1.load('sql.json');
+
+            $('add').addEvent('click', function() {
+                var tableName = $('tableName').value;
+                if (tableName !== "") {
+                    var node = {
+                        "properties": {
+                            "color": "#88b6b6",
+                            "name": tableName
+                        },
+                        "ins": {},
+                        "outs": {}
+                    }
+                    $$('#fields input[type=text]').each(function(item) {
+                        if (item.value !== "") {
+                            node.ins[item.value] = {
+                                'type': item.nextSibling.getSelected()[0].text
+                            }
+                        }
+                    });
+                    $$('#joins input[type=text]').each(function(item) {
+                        if (item.value !== "") {
+                            node.outs[item.value] = {
+                                'type': item.nextSibling.getSelected()[0].text
+                            }
+                        }
+                    });
+                    
+                    NG1.addNode(node, {
+                        x: NG1.width / 2,
+                        y: NG1.height / 2
+                    });
+                }
+            });
+            $('rem').addEvent('click', function() {
+                NG1.removeNode(NG1.selection.selected);
+            })
+        });
+
+        function tick() {
+            // this set makes it so the stage only re-renders when an event handler indicates a change has happened.
+            if (NG.update) {
+                NG.update = false; // only update once
+                NG.stage.update();
+            }
+            fpsP.set('text', 'FPS: ' + String(Ticker.getMeasuredFPS()|0));
+
+            if (NG1.update) {
+                NG1.update = false; // only update once
+                NG1.stage.update();
+            }
+        }
+        
+    </script>
+</body>
+
+<!-- Mirrored from www.brettdixon.com/demos/nodeGraph.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 04 Jul 2016 04:28:33 GMT -->
+</html>
