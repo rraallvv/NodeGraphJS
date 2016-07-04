@@ -56,8 +56,8 @@ NodeGraph.NodeGraph = new Class({
         var bgImg = new Image();
         var self = this;
         bgImg.onload = function() {
-            //self.bg.graphics.beginBitmapFill(this).rect(0, 0, self.options.width, self.options.height).endFill();
-            self.bg.graphics.beginFill('#ccc').rect(0, 0, self.options.width, self.options.height).endFill();
+            self.bg.graphics.beginBitmapFill(this).rect(0, 0, self.options.width, self.options.height).endFill();
+            //self.bg.graphics.beginFill('#ccc').rect(0, 0, self.options.width, self.options.height).endFill();
         };
         bgImg.src = 'imgs/grid.png';
 
