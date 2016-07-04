@@ -7,32 +7,26 @@
 	objects = {
 
 /* Begin PBXFileReference section */
+		E421F8FC1D2A29BE002D19D2 /* imgs */ = {isa = PBXFileReference; lastKnownFileType = folder; path = imgs; sourceTree = "<group>"; };
+		E421F8FD1D2A29BE002D19D2 /* libs */ = {isa = PBXFileReference; lastKnownFileType = folder; path = libs; sourceTree = "<group>"; };
+		E421F8FE1D2A29BE002D19D2 /* src */ = {isa = PBXFileReference; lastKnownFileType = folder; path = src; sourceTree = "<group>"; };
 		E4EE05731D29BADF00964AFA /* package.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = package.json; sourceTree = "<group>"; };
 		E4EE05751D29BFA700964AFA /* index.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = index.html; sourceTree = "<group>"; };
-		E4EE05761D2A24D500964AFA /* Source */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Source; sourceTree = "<group>"; };
-		E4EE05771D2A24F400964AFA /* easel.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = easel.js; sourceTree = "<group>"; };
-		E4EE05781D2A24F400964AFA /* grid.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = grid.png; sourceTree = "<group>"; };
 		E4EE05791D2A24F400964AFA /* math.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = math.json; sourceTree = "<group>"; };
-		E4EE057A1D2A24F400964AFA /* mootoolsCore.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = mootoolsCore.js; sourceTree = "<group>"; };
-		E4EE057B1D2A24F400964AFA /* mootoolsMore.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = mootoolsMore.js; sourceTree = "<group>"; };
 		E4EE057C1D2A24F400964AFA /* sql.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = sql.json; sourceTree = "<group>"; };
-		E4EE057D1D2A24F400964AFA /* vector.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = vector.js; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXGroup section */
 		E457C6831CEB9D6D00BFBE0D = {
 			isa = PBXGroup;
 			children = (
-				E4EE05761D2A24D500964AFA /* Source */,
+				E421F8FC1D2A29BE002D19D2 /* imgs */,
+				E421F8FD1D2A29BE002D19D2 /* libs */,
+				E421F8FE1D2A29BE002D19D2 /* src */,
 				E4EE05731D29BADF00964AFA /* package.json */,
 				E4EE05751D29BFA700964AFA /* index.html */,
-				E4EE05771D2A24F400964AFA /* easel.js */,
-				E4EE05781D2A24F400964AFA /* grid.png */,
 				E4EE05791D2A24F400964AFA /* math.json */,
-				E4EE057A1D2A24F400964AFA /* mootoolsCore.js */,
-				E4EE057B1D2A24F400964AFA /* mootoolsMore.js */,
 				E4EE057C1D2A24F400964AFA /* sql.json */,
-				E4EE057D1D2A24F400964AFA /* vector.js */,
 			);
 			sourceTree = "<group>";
 		};
