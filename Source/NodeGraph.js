@@ -59,7 +59,7 @@ NodeGraph.NodeGraph = new Class({
             //self.bg.graphics.beginBitmapFill(this).rect(0, 0, self.options.width, self.options.height).endFill();
             self.bg.graphics.beginFill('#ccc').rect(0, 0, self.options.width, self.options.height).endFill();
         };
-        bgImg.src = '/static/i/grid.png';
+        bgImg.src = 'grid.png';
 
         this.stage.addChild(this.container);
 
@@ -150,6 +150,9 @@ NodeGraph.NodeGraph = new Class({
             url: url,
             noCache: true,
             onComplete: function(nodes) {
+				if (!nodes) {
+					return;
+				}
                 nodes.each(function(node) {
                     if (node.type) {
                         var nodeType = this.getNodeFromType(node.type);
