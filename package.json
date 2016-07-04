@@ -11,6 +11,7 @@
 	"devDependencies": {
 	},
 	"scripts": {
+		"start": "node server 8080",
 		"build": ""
 	}
 }
