@@ -18,28 +18,28 @@ provides: [NodeGraph]
 */
 
 NodeGraph.Types = {
-    'String': {
-        'icon': 'imgs/String.png'
-    },
-    'Number': {
-        'icon': 'imgs/Number.png'
-    },
-    'Boolean': {
-        'icon': 'imgs/Bool.png'
-    },
-    'Array': {
-        'icon': 'imgs/Array.png'
-    },
-    'Null': {
-        'icon': 'imgs/Null.png'
-    },
-    'Object': {
-        'icon': 'imgs/Object.png'
-    },
-    'Date': {
-        'icon': 'imgs/Date.png',
-        serialize: function(val) {
-            return val.toISOString();
-        }
-    }
+	'String': {
+		'icon': 'imgs/String.png'
+	},
+	'Number': {
+		'icon': 'imgs/Number.png'
+	},
+	'Boolean': {
+		'icon': 'imgs/Bool.png'
+	},
+	'Array': {
+		'icon': 'imgs/Array.png'
+	},
+	'Null': {
+		'icon': 'imgs/Null.png'
+	},
+	'Object': {
+		'icon': 'imgs/Object.png'
+	},
+	'Date': {
+		'icon': 'imgs/Date.png',
+		serialize: function(val) {
+			return val.toISOString();
+		}
+	}
 }

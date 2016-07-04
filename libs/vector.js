@@ -26,19 +26,19 @@
  * @param {Number} y The y-coordinate. Possible not to specify.
  */
 NodeGraph.Vector2D = function() {
-    /** hoge */
-    this.x = 0.0;
+	/** hoge */
+	this.x = 0.0;
 
-    /** hoge */
-    this.y = 0.0;
+	/** hoge */
+	this.y = 0.0;
 
-    if (arguments === 2) {
-        this.x = arguments[0];
-        this.y = arguments[1];
-    } else if (arguments === 1) {
-        this.x = arguments[0].x;
-        this.y = arguments[0].y;
-    }
+	if (arguments === 2) {
+		this.x = arguments[0];
+		this.y = arguments[1];
+	} else if (arguments === 1) {
+		this.x = arguments[0].x;
+		this.y = arguments[0].y;
+	}
 };
 
 /** private */
@@ -57,21 +57,21 @@ NodeGraph.Vector2D._v1 = NodeGraph.Vector2D();
  */
 NodeGraph.Vector2D.prototype.set = function()
 {
-    if (arguments === 2) {
-        this.x = arguments[0];
-        this.y = arguments[1];
-    } else if (arguments === 1) {
-        this.x = arguments[0].x;
-        this.y = arguments[0].y;
-    }
+	if (arguments === 2) {
+		this.x = arguments[0];
+		this.y = arguments[1];
+	} else if (arguments === 1) {
+		this.x = arguments[0].x;
+		this.y = arguments[0].y;
+	}
 };
 
 /**
  *
  */
 NodeGraph.Vector2D.prototype.neg = function() {
-    this.x = -this.x;
-    this.y = -this.y;
+	this.x = -this.x;
+	this.y = -this.y;
 };
 
 /**
@@ -79,8 +79,8 @@ NodeGraph.Vector2D.prototype.neg = function() {
  * @param {NodeGraph.Vector2D} vec2
  */
 NodeGraph.Vector2D.prototype.add = function(vec) {
-    this.x += vec.x;
-    this.y += vec.y;
+	this.x += vec.x;
+	this.y += vec.y;
 };
 
 /**
@@ -88,8 +88,8 @@ NodeGraph.Vector2D.prototype.add = function(vec) {
  * @param {NodeGraph.Vector2D} vec2
  */
 NodeGraph.Vector2D.prototype.sub = function(vec) {
-    this.x -= vec.x;
-    this.y -= vec.y;
+	this.x -= vec.x;
+	this.y -= vec.y;
 };
 
 /**
@@ -97,89 +97,89 @@ NodeGraph.Vector2D.prototype.sub = function(vec) {
  * @param {Number} s
  */
 NodeGraph.Vector2D.prototype.mul = function(s) {
-    this.x *= s;
-    this.y *= s;
+	this.x *= s;
+	this.y *= s;
 };
 
 /**
  * @param {Number} s
  */
 NodeGraph.Vector2D.prototype.div = function(s) {
-    this._s1 = 1.0 / s;
-    this.x *= this._s1;
-    this.y *= this._s1;
+	this._s1 = 1.0 / s;
+	this.x *= this._s1;
+	this.y *= this._s1;
 };
 
 /**
  *
  */
 NodeGraph.Vector2D.prototype.mag = function() {
-    return Math.sqrt(this.x * this.x + this.y * this.y);
+	return Math.sqrt(this.x * this.x + this.y * this.y);
 };
 
 /**
  *
  */
 NodeGraph.Vector2D.prototype.sqMag = function() {
-    return this.x * this.x + this.y * this.y;
+	return this.x * this.x + this.y * this.y;
 };
 
 /**
  *
  */
 NodeGraph.Vector2D.prototype.dist = function(vec) {
-    Vector2D._v1.set(this);
-    Vector2D._v1.sub(vec);
-    return Vector2D._v1.mag();
+	Vector2D._v1.set(this);
+	Vector2D._v1.sub(vec);
+	return Vector2D._v1.mag();
 };
 
 /**
  *
  */
 NodeGraph.Vector2D.prototype.sqDist = function(vec) {
-    Vector2D._v1.set(this);
-    Vector2D._v1.sub(vec);
-    return Vector2D._v1.sqMag();
+	Vector2D._v1.set(this);
+	Vector2D._v1.sub(vec);
+	return Vector2D._v1.sqMag();
 };
 
 /**
  *
  */
 NodeGraph.Vector2D.prototype.dot = function(vec) {
-    return (this.x * vec.x) + (this.y * vec.y);
+	return (this.x * vec.x) + (this.y * vec.y);
 };
 
 /**
  *
  */
 NodeGraph.Vector2D.prototype.rotate = function(deg) {
-    Vector2D._s1 = NodeGraph.Math.sin(deg);
-    Vector2D._s2 = NodeGraph.Math.cos(deg);
+	Vector2D._s1 = NodeGraph.Math.sin(deg);
+	Vector2D._s2 = NodeGraph.Math.cos(deg);
 
-    Vector2D._v1.x = x * Vector2D._s2 - y * Vector2D._s1;
-    Vector2D._v1.y = y * Vector2D._s2 + x * Vector2D._s1;
+	Vector2D._v1.x = x * Vector2D._s2 - y * Vector2D._s1;
+	Vector2D._v1.y = y * Vector2D._s2 + x * Vector2D._s1;
 
-    this.set(Vector2D._v1);
+	this.set(Vector2D._v1);
 };
 
 /**
  *
  */
 NodeGraph.Vector2D.prototype.rotate_int = function(deg) {
-    Vector2D._s1 = NodeGraph.Math.sin_int(deg);
-    Vector2D._s2 = NodeGraph.Math.cos_int(deg);
+	Vector2D._s1 = NodeGraph.Math.sin_int(deg);
+	Vector2D._s2 = NodeGraph.Math.cos_int(deg);
 
-    Vector2D._v1.x = x * Vector2D._s2 - y * Vector2D._s1;
-    Vector2D._v1.y = y * Vector2D._s2 + x * Vector2D._s1;
+	Vector2D._v1.x = x * Vector2D._s2 - y * Vector2D._s1;
+	Vector2D._v1.y = y * Vector2D._s2 + x * Vector2D._s1;
 
-    this.set(Vector2D._v1);
+	this.set(Vector2D._v1);
 };
 
 /**
  *
  */
 NodeGraph.Vector2D.prototype.normalize = function() {
-    Vector2D._s1 = this.mag();
-    this.div(Vector2D._s1);
+	Vector2D._s1 = this.mag();
+	this.div(Vector2D._s1);
 };
 
